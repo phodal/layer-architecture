@@ -1,4 +1,4 @@
-package com.phodal.layer.application.facade.blog;
+package com.phodal.layer.application.facade.blog.representation;
 
 import com.phodal.layer.application.domain.blog.Blog;
 import lombok.AllArgsConstructor;
