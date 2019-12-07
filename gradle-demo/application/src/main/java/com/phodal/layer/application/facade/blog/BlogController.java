@@ -3,7 +3,6 @@ package com.phodal.layer.application.facade.blog;
 import com.phodal.layer.application.application.blog.EditBlogUseCase;
 import com.phodal.layer.application.application.blog.QueryBlogUseCase;
 import com.phodal.layer.application.facade.blog.representation.BlogDto;
-import lombok.var;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponents;
@@ -35,7 +34,7 @@ public class BlogController {
     @PostMapping(consumes = APPLICATION_JSON_VALUE)
     public ResponseEntity<?> post(@RequestBody CreateBlogRequest data, UriComponentsBuilder uriComponentsBuilder) {
         var blog = editBlogUseCase.create(data.title, data.body);
-        UriComponents uriComponents = uriComponentsBuilder.path("/blog/{id}").buildAndExpand(blog.getId());
+        UriComponents uriComponents = uriComponentsBuilder.path("/mybatis.blog/{id}").buildAndExpand(blog.getId());
         return ResponseEntity.created(uriComponents.toUri()).body(BlogDto.of(blog));
     }
 }

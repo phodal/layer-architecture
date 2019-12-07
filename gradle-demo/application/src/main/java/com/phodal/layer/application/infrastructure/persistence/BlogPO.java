@@ -16,6 +16,13 @@ public class BlogPO {
     private String title;
     private String body;
 
+    static BlogPO of(Blog blog) {
+        return blog == null ? null : new BlogPO(
+                blog.getId(),
+                blog.getTitle(),
+                blog.getBody());
+    }
+
     public Blog toDomainModel() {
         return new Blog(
                 UUID.fromString(id).toString(),

@@ -1,9 +1,6 @@
 package com.phodal.layer.application.domain.blog;
 
 import com.phodal.layer.application.domain.blog.exception.NoSuchBlogException;
-import lombok.var;
-
-import java.util.UUID;
 
 public class BlogService {
     private final BlogRepository blogRepository;

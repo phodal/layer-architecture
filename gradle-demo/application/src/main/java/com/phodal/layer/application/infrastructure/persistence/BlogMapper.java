@@ -10,4 +10,8 @@ import java.util.Optional;
 @Mapper
 public interface BlogMapper {
     Optional<BlogPO> findById(@Param("id") String id);
+
+    void update(@Param("blog") BlogPO blog);
+
+    void insert(@Param("blog") BlogPO blog);
 }

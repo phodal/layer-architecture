@@ -8,4 +8,4 @@ spring:
     baselineOnMigrate: true
 
 mybatis:
-  mapperLocations: classpath*:mapper/*.xml
+  mapperLocations: classpath*:/mybatis/**/*.xml

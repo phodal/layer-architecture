@@ -11,8 +11,7 @@ public class BlogDto {
     private String title;
     private String body;
 
-
-    static BlogDto of(Blog blog) {
+    public static BlogDto of(Blog blog) {
         return new BlogDto(
                 blog.getId(),
                 blog.getTitle(),

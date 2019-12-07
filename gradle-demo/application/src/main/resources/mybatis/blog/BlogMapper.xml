@@ -3,31 +3,20 @@
 <mapper namespace="com.phodal.layer.application.infrastructure.persistence.BlogMapper">
     <insert id="insert">
         insert into blog
-        (
-        id,title, body
-        )
-        values
-        (
-        #{blog.id}, #{blog.title}, #{blog.body}
-        )
+            (id, title, body)
+        values (#{blog.id}, #{blog.title}, #{blog.body})
     </insert>
 
     <update id="update">
-        update blog set
-        id = #{blog.id},
-        title = #{blog.title},
-        body = #{blog.body},
+        update blog
+        set id    = #{blog.id},
+            title = #{blog.title},
+            body  = #{blog.body}
         where id = #{blog.id}
     </update>
 
     <select id="findById" resultMap="records.blog">
         select *
-        from blog
-        where id = #{id}
-    </select>
-
-    <select id="existsById" resultType="boolean">
-        select count(id)
         from blog
         where id = #{id}
     </select>
