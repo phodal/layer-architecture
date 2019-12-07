@@ -2,6 +2,7 @@ plugins {
 	id 'org.springframework.boot' version '2.2.2.RELEASE'
 	id 'io.spring.dependency-management' version '1.0.8.RELEASE'
 	id 'java'
+	id "org.flywaydb.flyway" version "5.2.4"
 }
 
 group = 'com.phodal.layer'
@@ -20,19 +21,30 @@ repositories {
 
 dependencies {
 	implementation "org.springframework.boot:spring-boot-starter-web"
-	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.1.1'
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
-	implementation 'org.flywaydb:flyway-core'
 	implementation 'org.springframework.kafka:spring-kafka'
+	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.1.1'
+
+	implementation 'mysql:mysql-connector-java'
+	implementation 'org.flywaydb:flyway-core'
+
+	testImplementation 'org.flywaydb.flyway-test-extensions:flyway-spring-test:6.0.0'
 
 	compileOnly 'org.projectlombok:lombok'
 	runtimeOnly 'com.h2database:h2'
-	runtimeOnly 'mysql:mysql-connector-java'
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
 	testImplementation 'org.springframework.kafka:spring-kafka-test'
+	testImplementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter-test:2.1.1'
+}
+
+flyway {
+	driver = 'com.mysql.cj.jdbc.Driver'
+	url = "jdbc:mysql://localhost:3306/layer"
+	user = 'root'
+	password = 'password'
 }
 
 test {
