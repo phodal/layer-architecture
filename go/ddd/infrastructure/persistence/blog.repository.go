@@ -30,7 +30,7 @@ func (r blogRepositoryImpl) Get(ctx context.Context, id int) (*blog.Blog, error)
 
 // Save saves domain.User to storage
 func (r *blogRepositoryImpl) Save(ctx context.Context, u *blog.Blog) error {
-	stmt, err := r.conn.Prepare("insert into users (name) values (?)")
+	stmt, err := r.conn.Prepare("insert into blog(title, content) values (?, ?)")
 	if err != nil {
 		return err
 	}

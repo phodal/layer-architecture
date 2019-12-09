@@ -1,6 +1,6 @@
 use blog;
 
-CREATE TABLE IF NOT EXISTS users
+CREATE TABLE IF NOT EXISTS blog
 (
     `id`         int           NOT NULL AUTO_INCREMENT,
     `title`      varchar(256)  NOT NULL,

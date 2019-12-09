@@ -34,12 +34,12 @@ func (h Handler) getBlog(w http.ResponseWriter, r *http.Request, id int) {
 	usecase := applicationBlog.BlogUsecase{
 		Repository: h.Repository,
 	}
-	user, err := usecase.GetBlog(ctx, id)
+	blog, err := usecase.GetBlog(ctx, id)
 	if err != nil {
-		Error(w, http.StatusNotFound, err, "failed to get user")
+		Error(w, http.StatusNotFound, err, "failed to get blog")
 		return
 	}
-	JSON(w, http.StatusOK, user)
+	JSON(w, http.StatusOK, blog)
 }
 
 func (h Handler) createBlog(w http.ResponseWriter, r *http.Request) {
@@ -60,7 +60,8 @@ func (h Handler) createBlog(w http.ResponseWriter, r *http.Request) {
 	}
 
 	if err := interactor.AddBlog(ctx, p.Title, p.Content); err != nil {
-		Error(w, http.StatusInternalServerError, err, "failed to create user")
+		fmt.Println(err)
+		Error(w, http.StatusInternalServerError, err, "failed to create blog")
 		return
 	}
 	JSON(w, http.StatusCreated, nil)
