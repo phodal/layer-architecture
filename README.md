@@ -4,11 +4,11 @@
 
 based on [DDD Architecture Samples](https://github.com/howiehu/ddd-architecture-samples) & [ecommerce-order-service](https://github.com/e-commerce-sample/ecommerce-order-service)
 
-see in [/application](gradle-demo/application)
+see in [/application](java/application)
 
 ### Library Layer Architecture Example
 
-see in [/library](gradle-demo/library)
+see in [/library](java/library)
 
 License
 ---
