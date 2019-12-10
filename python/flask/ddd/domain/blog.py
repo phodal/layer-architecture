@@ -9,13 +9,13 @@ class Blog(object):
 
     @classmethod
     def from_dict(cls, adict):
-        room = Blog(
+        blog = Blog(
             id=adict['id'],
             title=adict['title'],
             content=adict['content'],
         )
 
-        return room
+        return blog
 
     def to_dict(self):
         return {
@@ -26,11 +26,5 @@ class Blog(object):
 
     def __eq__(self, other):
         return self.to_dict() == other.to_dict()
-
-    @classmethod
-    def createBlog(cls, content):
-
-        pass
-
 
 DomainModel.register(Blog)

@@ -12,5 +12,8 @@ class MemRepo:
         result = self._entries[index]
         return result
 
+    def add_blog(self, obj):
+        self._entries.append(obj)
+
     def list(self):
         return self._entries
