@@ -7,5 +7,5 @@ class BlogUseCases(uc.UseCase):
         self.repo = repo
 
     def process_request(self, request_object):
-        blog = self.repo.list(filters=request_object.filters)
-        return res.ResponseSuccess(blog)
+        # blog = self.repo.list(filters=request_object.filters)
+        return res.ResponseSuccess("")
