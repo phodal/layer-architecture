@@ -1,14 +1,11 @@
-import flask
-from flask import Flask, jsonify
+from flask import Flask
 
-app = Flask(__name__)
-
-from ddd.application.settings import APPLICATION_NAME
+from ddd.rest.blog import blog
+from ddd.settings import DevConfig
 
 
-@app.route('/info')
-def hello_world():
-    return jsonify({
-        'framework': 'Flask {}'.format(flask.__version__),
-        'application': APPLICATION_NAME,
-    })
+def create_app(config_object=DevConfig):
+    app = Flask(__name__)
+    app.config.from_object(config_object)
+    app.register_blueprint(blog.blueprint)
+    return app
