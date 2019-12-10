@@ -1,6 +1,6 @@
 from flask import Flask
 
-from ddd.rest.blog import blog
+from ddd.facade.blog import blog
 from ddd.settings import DevConfig
 
 

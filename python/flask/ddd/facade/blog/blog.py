@@ -3,7 +3,7 @@ import json
 from flask import Blueprint, jsonify, request, Response
 
 from . import create_blog_request as req
-from ddd.rest.status_code import STATUS_CODES
+from ddd.facade.status_code import STATUS_CODES
 from ddd.application.use_cases.blog_use_cases import CreateBlogUseCases
 from ddd.infrastructure.repository import memrepo as mr
 
