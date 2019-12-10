@@ -1,7 +1,7 @@
 from flask import Flask
 
-from .settings import DevConfig
-from .rest import blog
+from ddd.settings import DevConfig
+from ddd.rest.blog import blog
 
 
 def create_app(config_object=DevConfig):
