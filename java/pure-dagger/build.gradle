@@ -1,0 +1,18 @@
+plugins {
+    id 'java'
+}
+
+version 'unspecified'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'com.google.dagger:dagger:2.25.2'
+    annotationProcessor 'com.google.dagger:dagger-compiler:2.25.2'
+
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
