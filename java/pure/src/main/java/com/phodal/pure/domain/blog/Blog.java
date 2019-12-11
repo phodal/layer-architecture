@@ -13,10 +13,17 @@ public class Blog {
     private String body;
 
     public Blog(String title, String body) {
+        if (title == null || title.equals("")) {
+            throw new IllegalArgumentException("the title cannot be null or no content");
+        }
+
+
+        if (body == null || body.equals("")) {
+            throw new IllegalArgumentException("the title cannot be null or no content");
+        }
+
         this.id = UUID.randomUUID().toString();
         this.title = title;
         this.body = body;
     }
-
-
 }

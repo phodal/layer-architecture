@@ -7,6 +7,5 @@ import java.util.Optional;
 public interface BlogRepository extends BaseRepository {
     void save(Blog blog);
     Optional<Blog> findById(String id);
-    Blog createBlog(String title, String content);
 }
 
