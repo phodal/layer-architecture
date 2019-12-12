@@ -1,0 +1,3 @@
+task :rundev do
+  bundle exec 'foreman start'
+end

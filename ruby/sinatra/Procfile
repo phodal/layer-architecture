@@ -1,0 +1,1 @@
+puma: bundle exec rerun --no-notify --pattern="**/*.{rb,erb}" bundle exec puma

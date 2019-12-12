@@ -1,0 +1,46 @@
+source 'https://rubygems.org'
+
+# loads environment variables
+gem 'dotenv'
+# logger based on slf4j
+gem 'logging'
+# rack web server
+gem 'puma'
+# webserver default interface
+gem 'rack'
+# task manager
+gem 'rake'
+# micro web framework
+gem 'sinatra'
+# additional libs within Sinatra
+gem 'sinatra-contrib'
+
+
+group :test do
+  # object generation
+  gem 'factory_bot'
+  # random values
+  gem 'faker'
+  # test methods for rack apps
+  gem 'rack-test'
+  # test framework
+  gem 'rspec'
+  # e2e tests
+  gem 'selenium-cucumber'
+  gem 'selenium-webdriver'
+end
+
+group :development do
+  # debugging
+  gem 'foreman'
+  gem 'pry'
+end
+
+group :development, :test do
+  # restarts server after changes
+  gem 'rerun'
+  # code analyzer
+  gem 'rubocop'
+  # code analyzer for rspec tests
+  gem 'rubocop-rspec'
+end
