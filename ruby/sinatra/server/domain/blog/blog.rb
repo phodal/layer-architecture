@@ -1,13 +1,17 @@
+# frozen_string_literal: true
 module Domain
   class Blog
-    attr_accessor :id, :title, :content
+    attribute :id, :title, :content
 
-    def initialize(id = nil, title = nil, content = nil)
-      @id = id
-      @title = title
-      @content = content
+    def validate_title!
+      unless title.present?
+        raise Exceptions::BusinessException, 'Product must be greater than zero'
+      end
     end
 
+    def validate
+      validate_title!
+    end
 
     def to_hash
       {
